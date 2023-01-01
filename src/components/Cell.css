@@ -1,0 +1,21 @@
+.cell{
+    min-width:64px;
+    width:fit-content;
+    height:fit-content;
+}
+
+.cell-content{
+    min-width:32px ;
+    width:fit-content !important;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    line-height: 1.5715;
+    font-size: 14px;
+    border-style:solid !important;
+    border-right: 2px;
+    /* height: */
+}
+
+.last{
+    border-style:none;
+}

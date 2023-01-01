@@ -1,7 +1,7 @@
 .container{
-  min-width:30%;
+
   width:fit-content;
-  height:30%;
+  height:fit-content;
   position:absolute;
   left:0;
   right:0;
@@ -11,13 +11,9 @@
   background:beige;
   display:flex;
   transition:width 0.8s;
+  padding:32px 32px;
+  flex-direction: column;
 }
 
 
 
-.row{
-  min-width:64px;
-  width:fit-content;
-  height:16px;
-  background-color: aqua;
-}

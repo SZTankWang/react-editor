@@ -1,52 +1,26 @@
-import { useState,useEffect } from "react";
-
-import {Input} from "@arco-design/web-react";
 import { debounce } from "../utility/utility";
 import "./row.css";
+import Cell from "./Cell";
+import { useState } from "react";
+import { nanoid } from 'nanoid'
 
 export default function Row(props) {
+    //maintain a count of cells
+    const [cell,addCell] = useState(2);
 
-    // const [input,setInput] = useState(true);
-    // const [content,setContent] = useState("");
-    // useEffect(()=>{
-    //     console.log("row",Input);
+    function createRow(){
+        let arr = [];
+        for(let i=0;i<cell;i++){
+            let id=nanoid(10);
+            arr.push(<Cell key={id} last={i==cell-1}/>)
+        }
+        return arr;
+    }
 
-    // })
-    // // const [prev,setPrev] = useState("");
-
-    // function showContent(e){
-    //     //update content
-    //     console.log(e.target.value);
-    //     setContent(e.target.value);
-    //     setInput(false);
-
-
-    // }
-
-    // function getInputVal(val,e){
-    //     // console.log(setContent);
-
-
-    // }
-
-
-
-    // function Showinput(){
-    //     if(input){
-
-    //         return ;
-    //     }
-    //     else{
-    //         return <span onClick={()=>setInput(true)}>{content}</span>
-    //     }
-    // }
-
-    // return <div className="row">
-    //     {/* <Showinput/> */}
-    //     <Input style={{ width: 350 }} defaultValue="hello"/>
-    // </div>
-    return <Input style={{ width: 350 }} defaultValue="hello"/>;
-
+    return <div className="row">
+        {createRow()}
+        
+     </div>
 
 }
 
