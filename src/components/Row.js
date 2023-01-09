@@ -1,27 +1,30 @@
 import { debounce } from "../utility/utility";
 import "./row.css";
-import Cell from "./Cell";
-import { useState } from "react";
+import MemoizedCell from "./Cell";
+import React, { useState } from "react";
 import { nanoid } from 'nanoid'
+import { useSelector } from "react-redux";
+import {selectColIds} from "../store/sizeSlice";
 
-export default function Row(props) {
-    //maintain a count of cells
-    const [cell,addCell] = useState(2);
-
-    function createRow(){
-        let arr = [];
-        for(let i=0;i<cell;i++){
-            let id=nanoid(10);
-            arr.push(<Cell key={id} last={i==cell-1}/>)
-        }
-        return arr;
-    }
+const Row = (props)=> {
+    //maintain a count of cells through redux
+    // const [cell,addCell] = useState(2);
+    const cells = useSelector(selectColIds);
+    
 
     return <div className="row">
-        {createRow()}
+        {cells.map(x=><MemoizedCell key={x} col={x}/>)}
         
      </div>
 
 }
+
+function rowNotChanged(){
+    return true;
+}
+const MemoizedRow = React.memo(Row,rowNotChanged);
+export default MemoizedRow;
+
+
 
 

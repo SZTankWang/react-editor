@@ -1,17 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-import Row from './components/Row';
+import Tabs from './components/Tabs';
+import MemoizedRow from './components/Row';
 import Addcolumn from './components/Addcolumn';
 import Addrow from './components/Addrow';
-import {useSelector} from "react-redux";
-import {selectCol,selectRow} from "./store/sizeSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {selectRowIds,addToRowIds, addToColIds} from "./store/sizeSlice";
+import { useEffect } from 'react';
+import { nanoid } from 'nanoid'
 
 function App() {
-  const col = useSelector(selectCol);
-  const row = useSelector(selectRow);
+  // const col = useSelector(selectCol);
+  // const row = useSelector(selectRow);
+  const rowIds = useSelector(selectRowIds);
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    console.log("App render")
+    //add the first basic column
+    dispatch(addToRowIds())
+    dispatch(addToColIds())
+  },[]);
+
   return (
       <div className='container'>
-        <Row/>
+        <Tabs/>
+        {rowIds.map(x=><MemoizedRow key={x}/>)}
         <Addcolumn/>
         <Addrow/>
       </div>

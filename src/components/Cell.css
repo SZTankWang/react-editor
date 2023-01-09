@@ -1,5 +1,5 @@
 .cell{
-    min-width:64px;
+    /* min-width:64px; */
     width:fit-content;
     height:fit-content;
 }
@@ -19,3 +19,51 @@
 .last{
     border-style:none;
 }
+
+.basicCell{
+    background:#F6f8f9;
+    border: 1px solid #D9dbdc;
+    height:1.5rem;
+    min-width:5rem;
+    color:#717274; 
+    padding:0.3rem;
+    position:relative;
+
+}
+.cellEditor{
+    transition:background 0.3s ease;
+}
+
+.cellEditor:hover{
+    background:#E5e7e8;
+    transition:background 0.3s ease;
+
+}
+
+.cellEditor:focus{
+    border-color:#8bcef1;
+    transition:all 0.3s ease;
+
+}
+
+.handle{
+    position:absolute;
+    width:0.5rem;
+    height:100%;
+    right:0;
+    display:inline-block;
+    transition:all 0.3s ease;
+}
+
+.handle:hover{
+    background-color: #84bbea;
+    transition:all ease 0.3s;
+    cursor:col-resize
+}
+
+.tab{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;}

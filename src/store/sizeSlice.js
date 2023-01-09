@@ -1,33 +1,47 @@
 import {createSlice} from "@reduxjs/toolkit"
+import { nanoid } from "nanoid"
 
 
+//hold row ids and 
 export const sizeSlice = createSlice({
     name:"size",
     initialState:{
-        row:1,
-        col:1
+
+        rowIds:[],
+        colIds:[],
+        colWidth:{}
     },
     reducers:{
-        addRow:state =>{
-            state.row += 1
+
+        addToRowIds:state=>{
+            let id = nanoid(5);
+            state.rowIds = [...state.rowIds,id];
         },
-        addCol:state=>{
-            state.col += 1
+        addToColIds:state=>{
+            let id = nanoid(5);
+            state.colIds = [...state.colIds,id];
+        },
+        adjustColWidth:(state,action)=>{
+            state.colWidth.col = action.payload.col;
+            state.colWidth.width = action.payload.width;
         }
     }
     
 
 })
 
-export const selectRow = (state)=>{
-    console.log("row count:",state.size.row);
-    return state.size.row;
+
+
+export const selectRowIds = (state)=>{
+    return state.size.rowIds;
 }
 
-export const selectCol = (state)=>{
-    console.log("col count",state.size.col);
-    return state.size.col;
+export const selectColIds = (state)=>{
+    return state.size.colIds;
 }
 
+export const selectColWidth = (state)=>{
+    return state.size.colWidth;
+}
 export default sizeSlice.reducer;
-export const {addRow,addCol} = sizeSlice.actions;
+export const {addToRowIds,addToColIds,adjustColWidth} = sizeSlice.actions;
