@@ -1,10 +1,10 @@
-import { debounce } from "../utility/utility";
+import { debounce } from "../../utility/utility";
 import "./row.css";
-import MemoizedCell from "./Cell";
+import MemoizedCell from "../Cell/Cell";
 import React, { useState } from "react";
 import { nanoid } from 'nanoid'
 import { useSelector } from "react-redux";
-import {selectColIds} from "../store/sizeSlice";
+import {selectColIds} from "../../store/sizeSlice";
 
 const Row = (props)=> {
     //maintain a count of cells through redux

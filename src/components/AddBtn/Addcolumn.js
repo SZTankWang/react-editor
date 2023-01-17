@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {addToColIds} from "../store/sizeSlice";
+import {addToColIds} from "../../store/sizeSlice";
 
 import {IconPlus} from "@arco-design/web-react/icon";
 import "./icon.css";

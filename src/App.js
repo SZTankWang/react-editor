@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Tabs from './components/Tabs';
-import MemoizedRow from './components/Row';
-import Addcolumn from './components/Addcolumn';
-import Addrow from './components/Addrow';
+import Tabs from './components/Tab/Tabs';
+import MemoizedRow from './components/Row/Row';
+import Addcolumn from './components/AddBtn/Addcolumn';
+import Addrow from './components/AddBtn/Addrow';
 import {useDispatch, useSelector} from "react-redux";
 import {selectRowIds,addToRowIds, addToColIds} from "./store/sizeSlice";
 import { useEffect } from 'react';

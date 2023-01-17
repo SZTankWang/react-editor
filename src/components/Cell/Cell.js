@@ -1,6 +1,6 @@
 import React,{ useState,useEffect } from "react";
 import { useSelector } from "react-redux";
-import {selectColWidth} from "../store/sizeSlice"
+import {selectColWidth} from "../../store/sizeSlice"
 import {Input} from "@arco-design/web-react";
 import "./Cell.css";
 

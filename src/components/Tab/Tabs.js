@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import {selectColIds} from "../store/sizeSlice";
+import {selectColIds} from "../../store/sizeSlice";
 import Tab from "./Tab";
 
 const Tabs = ()=>{

@@ -51,6 +51,7 @@
     width:0.5rem;
     height:100%;
     right:0;
+    top:0;
     display:inline-block;
     transition:all 0.3s ease;
 }
@@ -66,4 +67,14 @@
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
-    user-select: none;}
+    user-select: none;
+
+}
+
+.tab:hover{
+    cursor:grab
+}
+
+.tab-container{
+    position:relative;
+}
