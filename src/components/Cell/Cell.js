@@ -23,7 +23,7 @@ const Cell = (props)=>{
 
 
     return  <div className="cell">
-                <div contentEditable className="cellEditor basicCell" style={{width:String(width)+"rem"}}></div>
+                <div contentEditable className="cellEditor basicCell" style={{width:String(width)+"rem"}}>input</div>
             </div>  
     
 }

@@ -83,7 +83,7 @@ const Tab = (props)=>{
     }
 
     function toggleDropdown(){
-            console.log("toggled")
+            // console.log("toggled")
             setShowDropdown(!showDropdown);
 
 
@@ -102,16 +102,11 @@ const Tab = (props)=>{
     </div>
  
         <div className="handle"  onMouseDown={enterResizeMode}></div>
-        <CSSTransition 
-        in={showDropdown} 
-        classNames="Dropdown"
-        timeout={500}
-        
-        unmountOnExit
-         >
-            <Dropdown/>
-
-        </CSSTransition>
+        <Dropdown 
+        visible={showDropdown}
+        editName={setName}
+        displayName={name}
+        />
         
 
     </div>
